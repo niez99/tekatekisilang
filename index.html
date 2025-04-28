@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teka Teki Silang - SMA</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container my-4">
+    <h1 class="text-center mb-4">Teka Teki Silang - Ilmu dan Pendidikan SMA</h1>
+
+    <nav class="mb-4">
+      <div class="btn-group" role="group" aria-label="Menu">
+        <button id="show-crossword-btn" type="button" class="btn btn-primary">Tampilkan Teka Teki</button>
+        <button id="show-create-quiz-btn" type="button" class="btn btn-secondary">Buat Kuis Baru</button>
+        <button id="show-results-btn" type="button" class="btn btn-info">Hasil & Ranking</button>
+      </div>
+    </nav>
+
+    <div id="login-section" class="card mx-auto" style="max-width: 400px;">
+      <div class="card-body">
+        <h2 class="card-title">Login</h2>
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="user-identifier" class="form-label">Email atau No Handphone:</label>
+            <input type="text" id="user-identifier" name="userIdentifier" class="form-control" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="crossword-section" style="display:none;">
+      <div id="crossword-container" class="mb-3"></div>
+      <div id="controls" class="text-center mb-3">
+        <button id="check-answers-btn" class="btn btn-success me-2">Periksa Jawaban</button>
+        <button id="reveal-hint-btn" class="btn btn-warning me-2">Beri Petunjuk</button>
+        <button id="reload-btn" class="btn btn-danger">Muat Ulang</button>
+        <span id="timer" class="ms-3 fw-bold">Waktu: 00:00</span>
+      </div>
+      <div id="clues-container" class="row">
+        <div class="col-md-6">
+          <h3>Menurun</h3>
+          <ul id="across-list" class="list-group"></ul>
+        </div>
+        <div class="col-md-6">
+          <h3>Mendatar</h3>
+          <ul id="down-list" class="list-group"></ul>
+        </div>
+      </div>
+      <div id="star-rating" class="text-center fs-3 mt-3 text-warning"></div>
+    </div>
+
+    <div id="results-section" class="card mx-auto" style="max-width: 700px; display:none;">
+      <div class="card-body">
+        <h2 class="card-title">Hasil & Ranking Pengguna</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Pengguna</th>
+              <th scope="col">Skor (%)</th>
+              <th scope="col">Bintang</th>
+            </tr>
+          </thead>
+          <tbody id="results-table-body">
+            <!-- User results will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
